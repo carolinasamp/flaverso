@@ -3,6 +3,7 @@
   "version": "0.1.1",
   "private": true,
   "description": "Flaverso - reading platform",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "format": "prettier --write .",
@@ -12,7 +13,28 @@
     "prepare": "husky install",
     "commitlint": "commitlint --edit $1",
     "release": "standard-version",
-    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s"
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
+    "build": "tsc -b",
+    "build:packages": "for d in packages/*; do [ -f \"$d/package.json\" ] && (cd \"$d\" && npm run build || true); done",
+    "build:web": "(cd apps/web && npm run build || true)",
+    "build:api": "(cd apps/api && npm run build || true)",
+    "build:all": "npm run build && npm run build:packages && npm run build:web && npm run build:api",
+    "lerna:bootstrap": "npx lerna bootstrap --hoist",
+    "lerna:publish": "npx lerna publish",
+    "lerna:version": "npx lerna version",
+    "ci:bootstrap": "npx lerna bootstrap --no-ci",
+    "ci:build": "npm run build:all"
+  },
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "lerna": {
+    "version": "independent",
+    "packages": [
+      "packages/*",
+      "apps/*"
+    ]
   },
   "lint-staged": {
     "*.{ts,tsx,js,jsx}": [
@@ -25,7 +47,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/carolinasamp/Flaverso.git"
+    "url": "https://github.com/carolinasamp/flaverso.git"
   },
   "author": "casrocha",
   "license": "MIT",
