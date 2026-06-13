@@ -20,6 +20,13 @@
     "build:api": "(cd apps/api && npm run build || true)",
     "build:all": "npm run build && npm run build:packages && npm run build:web && npm run build:api"
   },
+  "scripts": {
+    "lerna:bootstrap": "npx lerna bootstrap --hoist",
+    "lerna:publish": "npx lerna publish",
+    "lerna:version": "npx lerna version",
+    "ci:bootstrap": "npx lerna bootstrap --no-ci",
+    "ci:build": "npm run build:all"
+  },
   "workspaces": [
     "apps/*",
     "packages/*"
