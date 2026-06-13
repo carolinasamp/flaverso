@@ -200,6 +200,18 @@ npm run test -- --runInBand
 
 ---
 
+**TypeScript 7 migration**
+
+- The repository uses a solution-style TypeScript setup with project references (`tsconfig.base.json` + per-package `tsconfig.json`).
+- We target TypeScript 7 and Node ESM (`module: NodeNext`). Ensure `typescript` devDependency is `^7.0.0` locally and run `npm install`.
+- Avoid using `baseUrl`; prefer per-package `paths` or project references. If upgrading TypeScript versions, run the type checks with `tsc -b`.
+- To build all projects locally:
+
+```bash
+npm run build --if-present || npx tsc -b
+```
+
+
 Pre-commit checklist (example)
 
 - Run `npm run format` and ensure no formatting errors remain.

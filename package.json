@@ -3,6 +3,7 @@
   "version": "0.1.1",
   "private": true,
   "description": "Flaverso - reading platform",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "format": "prettier --write .",
@@ -53,6 +54,6 @@
     "standard-version": "^9.5.0",
     "ts-jest": "^29.4.11",
     "ts-node": "^10.9.2",
-    "typescript": "^6.0.3"
+    "typescript": "^7.0.0"
   }
 }
