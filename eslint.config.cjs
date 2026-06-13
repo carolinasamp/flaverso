@@ -1,3 +1,6 @@
+// For more info, see https://github.com/storybookjs/eslint-plugin-storybook#configuration-flat-config-format
+const storybook = require('eslint-plugin-storybook');
+
 module.exports = [
   {
     files: ['**/*.{js,jsx,ts,tsx}'],
@@ -8,13 +11,14 @@ module.exports = [
       parserOptions: {
         ecmaVersion: 2022,
         sourceType: 'module',
-        ecmaFeatures: { jsx: true }
-      }
+        ecmaFeatures: { jsx: true },
+      },
     },
     plugins: {
       '@typescript-eslint': require('@typescript-eslint/eslint-plugin'),
       react: require('eslint-plugin-react'),
-      'react-hooks': require('eslint-plugin-react-hooks')
+      'react-hooks': require('eslint-plugin-react-hooks'),
+      storybook,
     },
     settings: { react: { version: 'detect' } },
     rules: {
@@ -23,8 +27,8 @@ module.exports = [
       '@typescript-eslint/explicit-module-boundary-types': 'off',
       'react/function-component-definition': [
         'error',
-        { namedComponents: 'arrow-function', unnamedComponents: 'arrow-function' }
-      ]
-    }
-  }
+        { namedComponents: 'arrow-function', unnamedComponents: 'arrow-function' },
+      ],
+    },
+  },
 ];
