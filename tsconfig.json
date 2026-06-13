@@ -1,25 +1,10 @@
 {
-  "compilerOptions": {
-    "target": "ES2022",
-    "module": "ESNext",
-    "lib": ["ES2022", "DOM"],
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "noImplicitAny": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": false,
-    "jsx": "react-jsx",
-    "isolatedModules": true,
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["./*"]
-    },
-    "types": ["node", "jest"]
-  },
-  "include": ["**/*.ts", "**/*.tsx", "**/*.js"],
-  "exclude": ["node_modules", "dist", "build", ".next"]
+  "files": [],
+  "references": [
+    { "path": "./apps/web" },
+    { "path": "./apps/api" },
+    { "path": "./packages/ui" },
+    { "path": "./packages/types" },
+    { "path": "./packages/utils" }
+  ]
 }
