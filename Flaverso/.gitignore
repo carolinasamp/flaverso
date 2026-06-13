@@ -1,0 +1,38 @@
+# Node
+node_modules/
+
+# Build outputs
+dist/
+build/
+.next/
+.out/
+
+# Monorepo tools
+.turbo/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS
+.DS_Store
+
+# Env
+.env
+.env.local
+.env.*.local
+
+# Tests
+coverage/
+
+# IDEs
+.vscode/
+.idea/
+
+# Misc
+*.local
+*.log
+
+# Packages
+packages/*/node_modules/
